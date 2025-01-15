@@ -1,0 +1,133 @@
+body {
+    background-image: url(2579647.jpg);
+    padding: 0;
+    margin: 0;
+    font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+marquee {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    background: yellow;
+    color: red;
+    font-size: 1em;
+    padding: 5px;
+    text-transform: uppercase
+}
+
+header {
+    max-width: 1000px;
+    margin: 1em auto 0;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+    max-width: 1000px;
+    margin: 0 auto 1em;
+}
+
+@media screen and (max-width: 1000px) {
+    nav {
+        grid-template-columns: auto;
+    }
+}
+
+nav button {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: #ccc;
+    border: 3px outset white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+table, tr, td {
+    border: 3px inset #000;
+}
+
+table {
+    max-width: 900px;
+}
+
+td {
+    width: 300px;
+    padding: 10px;
+}
+
+.white-block {
+    background-color: #fff;
+    border: 5px outset #ccc;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+h1 {
+    padding: 0;
+    margin: 0 auto;
+    font-size: 2.4em;
+    max-width: fit-content;
+}
+
+h2 {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    max-width: fit-content;
+    margin: 1em auto;
+}
+
+p {
+    padding: 0;
+    margin: 0 0 1em;
+}
+
+#hit-counter {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.digit {
+    background-color: black;
+    color: limegreen;
+    font-size: 1em;
+    padding: 5px;
+    border: 1px solid limegreen;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rainbow-text {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+.green-yellow-text {
+    background: #2bc7ba;
+    color: yellow;
+}
+
+footer {
+    padding: 3px;
+}
+
+.dancing-baby {
+    max-width: 150px;
+    margin: 0 auto;
+}
