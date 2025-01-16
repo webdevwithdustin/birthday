@@ -1,7 +1,0 @@
-Date: 2025-01-16
-Name: John Doe
-Message: This is a great website!
----
-Date: 2025-01-15
-Name: Jane Smith
-Message: I love this guestbook!
