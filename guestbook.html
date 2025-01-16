@@ -15,21 +15,26 @@
             <button><a href="index.html">Homepage</a></button>
             <button><a href="info.html">Info</a></button>
             <button><a href="rsvp.html">RSVP</a></button>
-            <button><a href="guestbook.html">Guestbook</a></button>
+            <button><a href="guestbook.php">Guestbook</a></button>
         </nav>
     </header>
     <main>
+        <marquee behavior="scroll" direction="left" scrollamount="10">Please RSVP by June 1, 2025</marquee>
         <div class="white-block">
-            <h2 class="green-yellow-text">Sign our Guestbook!</h2>
-            <form action="guestbook.php" method="post">
+            <h2 class="green-yellow-text">RSVP here!</h2>
+            <form id="guestbookForm">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <br>
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
                 <br>
-                <button type="submit">Submit</button>
+                <button type="submit">Sign Guestbook</button>
             </form>
+            <h2>Guestbook Entries</h2>
+            <div class="entries" id="entries">
+                Loading entries...
+            </div>
         </div>
     </main>
     <footer>
@@ -39,7 +44,52 @@
         <div align='center'><a href='https://www.free-website-hit-counter.com'><img src='https://www.free-website-hit-counter.com/zc.php?d=6&id=3854&s=1' border='0' alt='Free Website Hit Counter'></a><br /><small><a href='https://www.free-website-hit-counter.com' title="Free Website Hit Counter">Free website hit counter</a></small></div>
     </footer>
 </body>
-<script src="hit-counter.js" type="text/javascript"></script>
+<script>
+    // Submit the guestbook form
+    document.getElementById('guestbookForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    try {
+        const response = await fetch('submit.php', {
+            method: 'POST',
+            body: formData,
+        });
+
+        if (response.ok) {
+            alert('Your entry has been saved!');
+            this.reset();
+            loadEntries(); // Reload the entries
+        } else {
+            alert('There was an error saving your entry.');
+        }
+    } catch (error) {
+        console.error('Error submitting the form:', error);
+    }
+});
+    
+    // Fetch and display guestbook entries
+    async function loadEntries() {
+        try {
+            const response = await fetch('guestbook.txt');
+            if (response.ok) {
+                const text = await response.text();
+                document.getElementById('entries').innerHTML = text
+                    .split('---')
+                    .map(entry => `<div>${entry.trim().replace(/\n/g, '<br>')}</div>`)
+                    .join('<hr>');
+            } else {
+                document.getElementById('entries').textContent = 'No entries yet. Be the first to sign!';
+            }
+        } catch (error) {
+            console.error('Error fetching guestbook entries:', error);
+        }
+    }
+
+    // Initial load
+    loadEntries();
+
+</script>
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 </html>
