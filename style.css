@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Comic Sans';
+    src: url('Comic Sans MS.ttf');
+}
+
 body {
     background-image: url(2579647.jpg);
     padding: 0;
@@ -7,7 +12,7 @@ body {
 }
 
 marquee {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: 'Comic Sans', sans-serif;
     background: yellow;
     color: red;
     font-size: 1em;
@@ -35,7 +40,7 @@ nav {
 }
 
 nav button {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: 'Comic Sans', sans-serif;
     font-weight: bold;
     font-size: 1em;
     background-color: #ccc;
@@ -80,7 +85,7 @@ h1 {
 }
 
 h2 {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: 'Comic Sans', sans-serif;
     max-width: fit-content;
     margin: 1em auto;
 }
@@ -90,28 +95,8 @@ p {
     margin: 0 0 1em;
 }
 
-#hit-counter {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.digit {
-    background-color: black;
-    color: limegreen;
-    font-size: 1em;
-    padding: 5px;
-    border: 1px solid limegreen;
-    width: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .rainbow-text {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: 'Comic Sans', sans-serif;
     background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
     background-clip: text;
     color: transparent;
@@ -125,6 +110,7 @@ p {
 
 footer {
     padding: 3px;
+    margin-top: 1em;
 }
 
 .dancing-baby {

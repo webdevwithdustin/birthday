@@ -18,15 +18,29 @@
             <button><a href="guestbook.php">Guestbook</a></button>
         </nav>
     </header>
-        <main>
-            <div class="white-block">
-                <h2 class="green-yellow-text">Welcome to our website!</h2>
-                <p>Hello everyone, it's Dusty & Jason!</p>
-                <p>Our 40th birthday is coming up and we think it would be awesome if you would be able to attend. On this website, you will find information about our party and be sure to sign our guestbook before you leave!</p>
-                <p><strong>ENJOY!</strong></p>
+    <main>
+        <div class="white-block">
+            <h2 class="green-yellow-text">Sign our Guestbook!</h2>
+            <form action="guestbook.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+            <div>
+                <?php
+    if (file_exists('guestbook.txt')) {
+        echo nl2br(file_get_contents('guestbook.txt'));
+    } else {
+        echo "No entries yet. Be the first to sign!";
+    }
+    ?>
             </div>
-            <marquee behavior="scroll" direction="left" scrollamount="10">Please RSVP by June 1, 2025</marquee>
-        </main>
+        </div>
+    </main>
     <footer>
         <div class="dancing-baby">
             <div class="tenor-gif-embed" data-postid="22415743" data-share-method="host" data-aspect-ratio="0.728125" data-width="100%"></div>
@@ -34,6 +48,7 @@
         <div align='center'><a href='https://www.free-website-hit-counter.com'><img src='https://www.free-website-hit-counter.com/zc.php?d=6&id=3854&s=1' border='0' alt='Free Website Hit Counter'></a><br /><small><a href='https://www.free-website-hit-counter.com' title="Free Website Hit Counter">Free website hit counter</a></small></div>
     </footer>
 </body>
+<script src="hit-counter.js" type="text/javascript"></script>
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 </html>
