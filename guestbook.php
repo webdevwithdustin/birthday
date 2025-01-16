@@ -21,7 +21,7 @@
     <main>
         <div class="white-block">
             <h2 class="green-yellow-text">Sign our Guestbook!</h2>
-            <form action="guestbook.php" method="post">
+            <form action="guestbook-code.php" method="post">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <br>
