@@ -14,25 +14,6 @@ function loadClient() {
     });
 }
 
-// Submit a new entry
-document.getElementById('guestbook-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const message = document.getElementById('message').value;
-
-    gapi.client.sheets.spreadsheets.values.append({
-        spreadsheetId: SHEET_ID,
-        range: 'A:B',
-        valueInputOption: 'RAW',
-        resource: {
-            values: [[name, message]],
-        },
-    }).then(() => {
-        alert('Your message has been added!');
-        fetchEntries();
-    }).catch(err => console.error('Error adding entry:', err));
-});
-
 // Fetch entries from Google Sheets
 function fetchEntries() {
     gapi.client.sheets.spreadsheets.values.get({
