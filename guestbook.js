@@ -18,7 +18,7 @@ function loadClient() {
 function fetchEntries() {
     gapi.client.sheets.spreadsheets.values.get({
         spreadsheetId: SHEET_ID,
-        range: 'A:B',
+        range: 'A2:B',
     }).then(response => {
         const entries = response.result.values || [];
         const list = document.getElementById('entries-list');
