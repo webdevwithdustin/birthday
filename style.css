@@ -36,6 +36,7 @@ nav {
 @media screen and (max-width: 1000px) {
     nav {
         grid-template-columns: auto;
+        grid-gap: 5px;
     }
 }
 
@@ -77,6 +78,12 @@ td {
     margin-bottom: 1em;
 }
 
+@media screen and (max-width: 1000px) {
+    .white-block {
+        padding: 0.5em;
+    }
+}
+
 h1 {
     padding: 0;
     margin: 0 auto;
@@ -88,6 +95,12 @@ h2 {
     font-family: 'Comic Sans', sans-serif;
     max-width: fit-content;
     margin: 1em auto;
+}
+
+@media screen and (max-width: 1000px) {
+    h2 {
+        margin: 0.5em auto;
+    }
 }
 
 p {
